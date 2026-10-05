@@ -38,20 +38,21 @@
 The app requires the following permissions:
 
 ### Core Permissions
-- `CAMERA` - For emergency camera capture
-- `RECORD_AUDIO` - For audio monitoring
-- `ACCESS_FINE_LOCATION` - For GPS tracking
-- `ACCESS_BACKGROUND_LOCATION` - For background location
-- `VIBRATE` - For haptic feedback
-- `POST_NOTIFICATIONS` - For emergency notifications
-- `FOREGROUND_SERVICE` - For location services
-- `INTERNET` - For data transmission
-- `CALL_PHONE` - For emergency dialing
+- `CAMERA` - Optional screen capture (only when the user enables it)
+- `RECORD_AUDIO` - Ambient audio evidence around a detection/SOS
+- `ACCESS_FINE_LOCATION` / `ACCESS_COARSE_LOCATION` - Location during emergency/lost mode
+- `ACCESS_BACKGROUND_LOCATION` - Location sharing in lost mode
+- `VIBRATE` - Haptic feedback
+- `POST_NOTIFICATIONS` - Running indicator and emergency alerts
+- `FOREGROUND_SERVICE` (+ location/microphone/mediaProjection/specialUse) - Running services
+- `INTERNET` - Telegram Bot API delivery
+
+The app does not request `CALL_PHONE` and does not place calls.
 
 ### Feature Requirements
-- Camera (required)
-- Auto-focus camera (not required)
-- Accelerometer sensor (not required)
+- Camera (optional; screen capture is opt-in)
+- Autofocus (not required)
+- Accelerometer (required only for opt-in tap/shake detection)
 
 ## App Structure
 

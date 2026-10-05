@@ -33,7 +33,7 @@
 1. Open **@BotFather** in Telegram.
 2. Send `/newbot`.
 3. Enter a bot **name** and a **username** (must end with `bot`).
-4. Copy the issued **bot token**. Example: `123456789:AAExxxxxxxxxxxxxxxxxxxxxxxxxxx`
+4. Copy the issued **bot token**. Example: `123456789:AA...` (your actual issued value)
 
 ## 5. Find the recipient chat ID
 
