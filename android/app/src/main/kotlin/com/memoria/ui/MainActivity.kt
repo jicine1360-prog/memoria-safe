@@ -343,11 +343,26 @@ class MainActivity : AppCompatActivity() {
         hapticHandler?.post(networkUpdateHandler)
     }
 
+    private fun localEmergencyNumber(): String {
+        val iso = (getSystemService(android.content.Context.TELEPHONY_SERVICE)
+            as? android.telephony.TelephonyManager)
+            ?.networkCountryIso?.takeIf { it.isNotBlank() }
+            ?: java.util.Locale.getDefault().country
+        return when (iso.uppercase()) {
+            "KR" -> "119"
+            "US", "CA" -> "911"
+            "GB", "IE" -> "999"
+            "JP" -> "119"
+            "CN" -> "110"
+            else -> "112"
+        }
+    }
+
     private fun setupQuickContacts() {
         val quickContacts = listOf(
             Pair("Mom", "+1234567890"),
             Pair("Dad", "+1234567891"),
-            Pair("Emergency", "911")
+            Pair("Emergency", localEmergencyNumber())
         )
         
         quickContacts.forEach { (name, phoneNumber) ->
