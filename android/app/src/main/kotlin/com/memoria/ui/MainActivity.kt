@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
     private var hapticHandler: Handler? = null
     private var sosButtonPressed = false
     private var sosTapCount = 0
-    private var sosTapHandler: Handler? = null
-    private var sosLongPressHandler: Handler? = null
+    private val sosTapHandler = Handler(Looper.getMainLooper())
+    private val sosLongPressHandler = Handler(Looper.getMainLooper())
     private val executor = Executors.newSingleThreadExecutor()
     private val mainHandler = Handler(Looper.getMainLooper())
 
