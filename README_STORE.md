@@ -39,8 +39,12 @@ cd android
 
 ## 개인정보
 
-[개인정보 / Data Safety 초안](PRIVACY_DATA_SAFETY.md) — 정식 배포 전에 보존기간·삭제
-정책, 담당 연락처, 법률 검토가 필요합니다.
+- 개인정보처리방침(호스팅): https://jicine1360-prog.github.io/memoria-safe/
+- 문서: [개인정보처리방침](PRIVACY_DATA_SAFETY.md) · [Data Safety 초안](DATA_SAFETY.md)
+
+## 라이선스
+
+MIT — [LICENSE](LICENSE)
 
 ## 상태
 
@@ -48,12 +52,10 @@ cd android
 
 - [x] 로컬 증거 자동 삭제 구현(보존 7일) 및 개인정보 문서에 고지
 - [x] 이메일 전송 보류(Telegram 중심) — 설정 UI 숨김, 비상 흐름에서 호출 제거
-- [ ] 개인정보처리방침 URL 호스팅, 담당/연락처(관리봇) 확정
-- [ ] 운영 HTTPS 서버 URL 확정 (`SERVER_BASE_URL` 플레이스홀더 교체)
-- [ ] Play Console Data Safety 양식 작성
+- [x] 서버 미사용(Telegram 직접 전송) — 분실 모드도 Telegram 명령(/lost, /stop) 방식
+- [x] 개인정보처리방침 URL 호스팅, 연락처(cloudseha@gmail.com / @Memoriasafe_bot)
+- [x] MIT 라이선스
+- [ ] Play Console Data Safety 양식 입력
 - [ ] 콘텐츠 등급(IARC) 설문, 스크린샷/스토어 자산 등록
 - [ ] 백그라운드 위치·마이크·화면 캡처 권한 사유 및 데모 영상
-
-## 라이선스
-
-추가 예정.
+- [ ] release 서명 키스토어(로컬) 준비 및 AAB 서명

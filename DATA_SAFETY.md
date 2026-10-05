@@ -37,5 +37,5 @@
 ## 제출 전 확인
 
 - [x] 서버 미사용(Telegram 직접 전송)으로 확정 — 분실 모드도 Telegram 명령 방식
-- [ ] 개인정보처리방침 URL 호스팅 (GitHub Pages)
+- [x] 개인정보처리방침 URL: https://jicine1360-prog.github.io/memoria-safe/
 - [x] 담당 연락처: cloudseha@gmail.com / @Memoriasafe_bot
