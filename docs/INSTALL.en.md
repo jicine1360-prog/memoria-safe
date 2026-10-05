@@ -88,7 +88,7 @@ never commit the keystore or passwords.
 
 ## 10. Caution
 
-- Memoria does not replace emergency services. In a real emergency, call **112** (or your
-  local emergency number) directly.
+- Memoria does not replace emergency services. In a real emergency, call your local
+  emergency number directly (e.g., **911** in the US, **112** in the EU, **119/112** in Korea).
 - While running, Android's microphone/location indicators remain visible; the app does not
   hide or disable them.

@@ -1,8 +1,8 @@
 # Memoria Safe User Guide (Android)
 
 Memoria Safe is a **personal-safety app that the device owner consents to and configures**.
-It does not automatically call emergency services (112 etc.); in an emergency, contact local
-emergency services directly.
+It does not automatically call emergency services; in an emergency, contact your local
+emergency number directly (911 in the US, 112 in the EU, 119/112 in Korea).
 
 ## 1. Install and first run
 
@@ -52,5 +52,5 @@ emergency services directly.
 
 - While running, Android's microphone/location indicators remain visible; the app does not
   hide or disable them.
-- Memoria does not replace emergency services. In a real emergency, call 112 (or your local
-  emergency number) directly.
+- Memoria does not replace emergency services. In a real emergency, call your local
+  emergency number directly (911 in the US, 112 in the EU, 119/112 in Korea).
