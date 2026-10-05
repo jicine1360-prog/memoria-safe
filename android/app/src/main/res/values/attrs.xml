@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SOSButton">
+        <attr name="android:radius" />
+    </declare-styleable>
+
+    <declare-styleable name="StatusView">
+        <attr name="status" format="enum">
+            <enum name="safe" value="0" />
+            <enum name="warning" value="1" />
+            <enum name="danger" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="WaveformView">
+        <attr name="waveformColor" format="color" />
+        <attr name="background_color" format="color" />
+    </declare-styleable>
+</resources>

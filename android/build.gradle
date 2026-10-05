@@ -1,0 +1,24 @@
+buildscript {
+    ext {
+        kotlin_version = '1.9.0'
+        nav_version = '2.7.6'
+        room_version = '2.6.1'
+        hilt_version = '2.50'
+        coroutines_version = '1.7.3'
+        compose_version = '1.5.4'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.10.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.0'
+        classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

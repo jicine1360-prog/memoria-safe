@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memoria 안전</string>
+    <string name="title_contacts">Emergency Contacts</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_history">Event History</string>
+    <string name="status_active">Memoria Active</string>
+    <string name="status_paused">Monitoring Paused</string>
+    <string name="emergency_alert">EMERGENCY!</string>
+    <string name="sos_button_text">SOS</string>
+
+    <string name="sos_text">SOS</string>
+    <string name="sos_button_description">Press 3 times or hold to activate emergency</string>
+    <string name="privacy_mode">Privacy Mode</string>
+    <string name="sensors_status">Monitoring sensors</string>
+    <string name="timeline_title">Event Timeline</string>
+    <string name="quick_contacts">Quick Contacts</string>
+    <string name="filter_all">All</string>
+    <string name="filter_emergency">Emergency</string>
+    <string name="filter_safety">Safety</string>
+
+    <string name="gps_status_unknown">GPS: --</string>
+    <string name="gps_status_active">GPS Active</string>
+    <string name="gps_status_acquiring">GPS Acquiring</string>
+    <string name="gps_status_permission_required">GPS: permission required</string>
+    <string name="battery_status_unknown">Battery: --</string>
+    <string name="network_status_unknown">Network: --</string>
+
+    <string name="emergency_activated">EMERGENCY ACTIVATED</string>
+    <string name="alarm_active">Alarm Active</string>
+    <string name="location_sharing">Sharing Location</string>
+    <string name="contacts_notified">Contacts notified</string>
+    <string name="cancel_emergency">Cancel Emergency</string>
+    <string name="lock_emergency">Lock Emergency</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Memoria 설정</string>
+    <string name="settings_section_telegram">텔레그램 알림 (보내는 사람 = 봇)</string>
+    <string name="settings_tg_token_hint">보내는 사람 — 봇 토큰</string>
+    <string name="settings_tg_token_desc">@BotFather 로 내가 만든 봇의 토큰 (봇이 알림을 보냄)</string>
+    <string name="settings_tg_chat_hint">받는 사람 — Chat ID</string>
+    <string name="settings_tg_chat_desc">여러 명이면 콤마(,)로 구분. 예: 111, 222</string>
+    <string name="settings_tg_test">테스트 메시지 전송</string>
+    <string name="settings_tg_test_result">전송 결과:</string>
+    <string name="settings_section_tap">톡톡 패턴 (1차)</string>
+    <string name="settings_tap_count_label">횟수</string>
+    <string name="settings_tap_level_label">신호 등급</string>
+    <string name="settings_tap_test">지금 실험</string>
+    <string name="settings_tap_save">통과 → 저장</string>
+    <string name="settings_tap_status_default">톡톡 N회를 시도하세요. 감지되면 횟수가 올라갑니다.</string>
+    <string name="settings_tap_detected">✅ 패턴 감지 완료 (N회)</string>
+    <string name="settings_section_shake">흔들기 패턴 (2차)</string>
+    <string name="settings_shake_count_label">횟수</string>
+    <string name="settings_shake_level_label">신호 등급</string>
+    <string name="settings_shake_test">지금 실험</string>
+    <string name="settings_shake_save">통과 → 저장</string>
+    <string name="settings_shake_status_default">흔들기 N회를 시도하세요. 감지되면 횟수가 올라갑니다.</string>
+    <string name="settings_shake_detected">✅ 패턴 감지 완료 (N회)</string>
+    <string name="settings_level_1st">1차 (경계)</string>
+    <string name="settings_level_2nd">2차 (긴급)</string>
+    <string name="settings_section_saving">감지 동작</string>
+    <string name="settings_monitor_switch">백그라운드 모니터링 활성화</string>
+    <string name="settings_monitor_desc">켜두면 비상 패턴을 항상 감지합니다. 텔레그램 설정이 필요합니다.</string>
+
+    <!-- Email (SMTP) section -->
+    <string name="settings_section_email">이메일 (SMTP 전송)</string>
+    <string name="settings_email_host_hint">SMTP 호스트</string>
+    <string name="settings_email_host_desc">예: smtp.gmail.com</string>
+    <string name="settings_email_port_hint">포트 (기본 587)</string>
+    <string name="settings_email_user_hint">계정 (이메일 주소)</string>
+    <string name="settings_email_user_desc">예: you@gmail.com</string>
+    <string name="settings_email_pass_hint">앱 비밀번호</string>
+    <string name="settings_email_pass_desc">Gmail 2단계 인증 시 생성한 앱 비밀번호</string>
+    <string name="settings_email_from_hint">보내는 사람 (From)</string>
+    <string name="settings_email_to_hint">받는 사람 (To)</string>
+    <string name="settings_email_test">테스트 이메일 전송</string>
+    <string name="settings_email_test_result">전송 결과:</string>
+    <string name="settings_section_screen_capture">화면 캡처</string>
+    <string name="settings_screen_capture_switch">화면 캡처 허용 (비상 시 화면 스틸)</string>
+    <string name="settings_screen_capture_desc">켜면 시스템 동의 팝업이 뜹니다. 허용하면 비상 감지 시 화면 스틸이 텔레그램/이메일로 전송됩니다. Android 14+에서는 권한이 일정 시간 후 갱신이 필요할 수 있습니다.</string>
+
+    <!-- First-run consent -->
+    <string name="consent_title">Memoria 안전 이용 동의</string>
+    <string name="consent_intro">Memoria 안전은 위급 상황(낙상·위협·분실 등)에서 도움을 요청하는 개인 안전 앱입니다. 아래 내용을 확인하고 동의해 주세요.</string>
+    <string name="consent_section_usage">어떻게 동작하나요?</string>
+    <string name="consent_section_usage_body">• 톡톡/흔들기 패턴 또는 SOS 버튼을 사용자가 직접 설정합니다.\n• 패턴 감지 또는 SOS 발동 시, 설정한 수신자(텔레그램/이메일)에게 알림과 위치가 전송됩니다.\n• 분실 모드에서는 설정한 보호자가 원격으로 위치 확인을 켤 수 있으며, 이 화면이 보여주는 것처럼 위치 공유 중임이 기기에 항상 표시됩니다.\n• 카메라·마이크·화면은 긴급 감지 시점 주변의 증거를 기록하기 위해 사용되며, 실행 중에는 알림으로 계속 안내됩니다.</string>
+    <string name="consent_section_data">어떤 정보가 전송되나요?</string>
+    <string name="consent_section_data_body">• 사용자가 직접 입력한 수신자에게만 전송됩니다. (제3자 광고·공유 없음)\n• 전송 정보: 위치, 감지 시점 음성, 화면 스틸, 이동 경로\n• 수신자(텔레그램/이메일)가 해외에 있을 경우 위치 정보가 해외에서 처리될 수 있습니다.\n• 자세한 내용은 개인정보처리방침을 참고하세요.</string>
+    <string name="consent_notice">동의하지 않으면 감지·알림 기능을 사용할 수 없습니다. 언제든 설정에서 모니터링을 끌 수 있습니다.</string>
+    <string name="consent_agree">모두 동의하고 시작</string>
+    <string name="consent_decline">동의하지 않음 (종료)</string>
+
+    <!-- Lost mode (transparent) -->
+    <string name="lost_mode_title">분실/보호 모드 활성화</string>
+    <string name="lost_mode_body">이 기기는 Memoria 안전 분실 모드로 전환되어 있습니다.\n\n현재 위치와 상태가 설정하신 보호자에게 주기적으로 전송되고 있습니다.\n기기의 화면을 끄거나 잠글 수 있지만, 위치 공유는 분실 모드가 해제될 때까지 계속됩니다.\n소유권을 확인해 주시면 분실 모드를 해제할 수 있습니다.</string>
+    <string name="notif_lost_title">Memoria 안전 분실 모드</string>
+    <string name="notif_lost_body">위치가 보호자에게 공유 중입니다. 상세 화면을 눌러 확인하세요.</string>
+    <string name="notif_lost_fullscreen">분실 모드가 표시됩니다</string>
+</resources>

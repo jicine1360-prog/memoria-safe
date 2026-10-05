@@ -1,0 +1,21 @@
+# Gradle / build outputs
+.gradle/
+build/
+**/build/
+
+# Local machine config
+local.properties
+**/local.properties
+
+# Signing secrets — NEVER commit
+keystore.properties
+**/keystore.properties
+*.jks
+*.keystore
+android/keystore/*.jks
+android/keystore/*.keystore
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/emergency_red">
+
+    <!-- Red Flash Screen -->
+    <View
+        android:id="@+id/flashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <!-- Main Emergency UI -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <!-- Emergency Status Text -->
+        <TextView
+            android:id="@+id/emergencyStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:text="@string/emergency_activated"
+            android:textColor="@color/text_primary"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- Alarm Status -->
+        <TextView
+            android:id="@+id/alarmStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/alarm_active"
+            android:textColor="@color/warning_yellow"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Camera Preview -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp">
+
+            <TextureView
+                android:id="@+id/cameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <!-- Location Sharing Status -->
+        <TextView
+            android:id="@+id/locationStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/location_sharing"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <!-- Emergency Contacts Status -->
+        <TextView
+            android:id="@+id/contactsStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/contacts_notified"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelEmergencyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_emergency"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/safe_green"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_cancel"
+            app:iconGravity="textStart"
+            app:iconPadding="16dp"
+            app:iconTint="@color/text_primary"
+            app:strokeColor="@color/text_primary"
+            app:strokeWidth="2dp" />
+
+        <!-- Lock Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lockEmergencyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/lock_emergency"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/emergency_red"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_lock"
+            app:iconGravity="textStart"
+            app:iconPadding="16dp"
+            app:iconTint="@color/text_primary" />
+
+    </LinearLayout>
+
+</FrameLayout>

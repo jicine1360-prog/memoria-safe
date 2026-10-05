@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="emergency_red">#FF0000</color>
+    <color name="emergency_red_dark">#CC0000</color>
+    <color name="warning_yellow">#FFC107</color>
+    <color name="warning_yellow_dark">#FF9800</color>
+    <color name="safe_green">#4CAF50</color>
+    <color name="safe_green_dark">#388E3C</color>
+    <color name="dark_background">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+    <color name="dark_surface_variant">#2D2D2D</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="status_unknown">#9E9E9E</color>
+    <color name="sos_gradient_start">#FF0000</color>
+    <color name="sos_gradient_end">#990000</color>
+    <color name="waveform_active">#00E676</color>
+    <color name="waveform_inactive">#2D2D2D</color>
+    <color name="camera_preview">#000000</color>
+    <color name="accessibility_red">#C60000</color>
+    <color name="accessibility_yellow">#B7A200</color>
+    <color name="accessibility_green">#3B7A00</color>
+</resources>

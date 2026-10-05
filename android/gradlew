@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+
+# Portable Gradle launcher for the store build.
+GRADLE_VERSION="${MEMORIA_GRADLE_VERSION:-8.13}"
+if command -v gradle >/dev/null 2>&1; then
+    exec gradle "$@"
+fi
+
+GRADLE_HOME="${GRADLE_HOME:-$HOME/.gradle/manual/gradle-$GRADLE_VERSION}"
+if [ ! -x "$GRADLE_HOME/bin/gradle" ]; then
+    command -v curl >/dev/null 2>&1 || { echo "curl is required to download Gradle" >&2; exit 1; }
+    command -v unzip >/dev/null 2>&1 || { echo "unzip is required to extract Gradle" >&2; exit 1; }
+    mkdir -p "$(dirname "$GRADLE_HOME")"
+    TMP_ZIP="$(mktemp)"
+    trap 'rm -f "$TMP_ZIP"' EXIT HUP INT TERM
+    curl --fail --location --silent --show-error \
+        "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
+        -o "$TMP_ZIP"
+    unzip -q "$TMP_ZIP" -d "$(dirname "$GRADLE_HOME")"
+    rm -f "$TMP_ZIP"
+    trap - EXIT HUP INT TERM
+fi
+exec "$GRADLE_HOME/bin/gradle" "$@"
