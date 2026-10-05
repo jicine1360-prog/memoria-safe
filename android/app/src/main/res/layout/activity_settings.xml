@@ -312,7 +312,13 @@
             android:layout_marginVertical="20dp"
             android:background="@color/dark_surface_variant" />
 
-        <!-- Email (SMTP) section -->
+        <!-- Email (SMTP) section — 보류: 현재 Telegram 중심이라 UI를 숨깁니다. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -433,6 +439,7 @@
             android:text="@string/settings_email_test_result"
             android:textColor="@color/text_secondary"
             android:textSize="13sp" />
+        </LinearLayout>
 
         <!-- Divider -->
         <View

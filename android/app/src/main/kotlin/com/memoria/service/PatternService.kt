@@ -249,14 +249,8 @@ class PatternService : Service(), SensorEventListener {
                 confidence = 0.9f,
                 location = location
             )
-            val emailSent = EmailDirect.sendEmergency(
-                this@PatternService,
-                level = config.level,
-                type = type,
-                confidence = 0.9f,
-                location = location
-            )
-            Log.i(TAG, "Pattern $kind triggered: tg=$tgSent email=$emailSent level=${config.level}")
+            // 이메일 전송은 보류(Telegram 중심). EmailDirect 코드는 유지하되 호출하지 않음.
+            Log.i(TAG, "Pattern $kind triggered: tg=$tgSent level=${config.level}")
 
             // 2) 증거 수집: 전+후 10초 음성 + 최근 1시간 경로 KML + 화면 캡처
             EvidenceService.start(this@PatternService)
@@ -295,18 +289,7 @@ class PatternService : Service(), SensorEventListener {
                 Log.i(TAG, "screen evidence tg: $ok")
             }
 
-            val evidenceFiles = listOfNotNull(audioFile, pathFile, screenFile)
-            if (evidenceFiles.isNotEmpty()) {
-                val emailEvidenceSent = EmailDirect.sendEmergencyWithEvidence(
-                    this@PatternService,
-                    level = config.level,
-                    type = type,
-                    confidence = 0.9f,
-                    location = location,
-                    attachments = evidenceFiles
-                )
-                Log.i(TAG, "evidence email: $emailEvidenceSent")
-            }
+            // 증거 이메일 전송도 보류(Telegram 중심).
         }
     }
 

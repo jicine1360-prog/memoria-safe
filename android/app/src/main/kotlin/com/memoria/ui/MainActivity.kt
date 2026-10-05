@@ -68,6 +68,9 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        // 보존기간이 지난 로컬 증거 파일 정리 (개인정보 보존 최소화)
+        com.memoria.util.RetentionCleaner.clean(this)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
@@ -493,17 +496,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
-            runCatching {
-                kotlinx.coroutines.runBlocking {
-                    com.memoria.service.EmailDirect.sendEmergency(
-                        this@MainActivity,
-                        level = UserPrefs.LEVEL_2ND,
-                        type = "sos_activated",
-                        confidence = 1.0f,
-                        location = location
-                    )
-                }
-            }
+            // 이메일 전송은 보류(Telegram 중심).
             com.memoria.service.LostModeService.start(this@MainActivity)
 
             // 증거 수집: 전후 10초 음성 + 최근 1시간 경로 + 화면 캡처
@@ -532,17 +525,7 @@ class MainActivity : AppCompatActivity() {
                             this@MainActivity, file, "🚨 [Memoria 2차] SOS 증거: 화면 캡처"
                         )
                     }
-                    val evidenceFiles = listOfNotNull(audioFile, pathFile, screenFile)
-                    if (evidenceFiles.isNotEmpty()) {
-                        com.memoria.service.EmailDirect.sendEmergencyWithEvidence(
-                            this@MainActivity,
-                            level = UserPrefs.LEVEL_2ND,
-                            type = "sos_activated",
-                            confidence = 1.0f,
-                            location = location,
-                            attachments = evidenceFiles
-                        )
-                    }
+                    // 증거 이메일 전송은 보류(Telegram 중심).
                 }
             }
         }
