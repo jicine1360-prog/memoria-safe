@@ -37,9 +37,8 @@ android {
             useSupportLibrary true
         }
 
-        buildConfigField "String", "SERVER_BASE_URL", "\"https://api.memoria.safe/v1\""
-        // TODO(출시 필수): targetSdk 를 Google Play 요구 버전(API 35+)으로 상향 후
-        // 실제 HTTPS 운영 서버 URL로 교체할 것.
+        // 서버 없이 Telegram Bot API로 직접 전송합니다(위치·알림·증거).
+        // 분실 모드도 보호자의 봇 명령(/lost, /stop)을 getUpdates로 조회해 처리합니다.
     }
 
     buildTypes {

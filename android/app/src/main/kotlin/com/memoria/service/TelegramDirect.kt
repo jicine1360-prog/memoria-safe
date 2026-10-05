@@ -79,6 +79,68 @@ object TelegramDirect {
         }
     }
 
+    /** SOS/분실 모드에서 현재 위치(좌표 + 지도 링크)를 지정 수신자에게 전송한다. */
+    suspend fun sendLocationUpdate(
+        context: Context,
+        location: Location,
+        note: String = "📍 위치 업데이트"
+    ): Boolean {
+        val coord = sendLocation(context, location)
+        val link = sendMapLink(context, location)
+        val text = sendToAll(context) { chat -> sendMessage(context, chat, note, disablePreview = true) }
+        return coord || link || text
+    }
+
+    /** 임의 텍스트를 지정 수신자에게 전송한다. */
+    suspend fun sendStatusText(context: Context, text: String): Boolean =
+        sendToAll(context) { chat -> sendMessage(context, chat, text, disablePreview = true) }
+
+    /**
+     * 보호자 명령(/lost, /stop)을 getUpdates로 조회한다.
+     * 허용된 챗에서 온 마지막 명령을 "lost"/"stop"으로 반환하고, 없으면 null을 반환한다.
+     * 서버 없이 Telegram만으로 분실 모드를 켜고 끌 수 있게 한다.
+     */
+    suspend fun pollLostCommands(context: Context): String? {
+        val token = botToken(context) ?: return null
+        val allowed = chatIds(context)
+        val offset = UserPrefs.getTelegramUpdateOffset(context)
+        return withContext(Dispatchers.IO) {
+            try {
+                val url = URL("$API_BASE$token/getUpdates?timeout=0&offset=$offset")
+                val conn = url.openConnection() as HttpURLConnection
+                try {
+                    conn.requestMethod = "GET"
+                    conn.connectTimeout = 6000
+                    conn.readTimeout = 6000
+                    if (conn.responseCode != 200) return@withContext null
+                    val text = conn.inputStream.bufferedReader().use { it.readText() }
+                    val arr = JSONObject(text).optJSONArray("result") ?: return@withContext null
+                    var lastOffset = offset
+                    var command: String? = null
+                    for (i in 0 until arr.length()) {
+                        val update = arr.getJSONObject(i)
+                        val updateId = update.optLong("update_id", -1L)
+                        if (updateId >= 0) lastOffset = maxOf(lastOffset, updateId + 1)
+                        val msg = update.optJSONObject("message") ?: continue
+                        val chatId = msg.optJSONObject("chat")?.optString("id") ?: continue
+                        if (allowed.isNotEmpty() && chatId !in allowed) continue
+                        val cmd = msg.optString("text", "").trim().lowercase()
+                        when {
+                            cmd.startsWith("/lost") || cmd == "/분실" -> command = "lost"
+                            cmd.startsWith("/stop") || cmd == "/중지" -> command = "stop"
+                        }
+                    }
+                    UserPrefs.setTelegramUpdateOffset(context, lastOffset)
+                    command
+                } finally {
+                    conn.disconnect()
+                }
+            } catch (e: Exception) {
+                null
+            }
+        }
+    }
+
     /**
      * 증거 파일(음성 WAV, 화면 캡처 JPEG, 경로 KML)을 텔레그램으로 전송한다.
      * 파일이 없거나 전송 실패해도 false를 반환할 뿐이며 예외를 던지지 않는다.

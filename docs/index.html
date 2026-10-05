@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memoria 안전 — 개인정보처리방침</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; background: #f4f7fb; color: #233247; font-family: "Noto Sans KR","Malgun Gothic",system-ui,sans-serif; line-height: 1.7; }
+  main { max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 26px; letter-spacing: -0.03em; margin: 0 0 4px; }
+  .updated { color: #718096; font-size: 13px; margin-bottom: 24px; }
+  h2 { font-size: 18px; margin: 30px 0 8px; letter-spacing: -0.02em; }
+  p, li { font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+  th, td { border: 1px solid #dbe3ec; padding: 8px 10px; text-align: left; }
+  th { background: #eaf1f8; }
+  code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; }
+  .box { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 24px; }
+  footer { color: #8492a5; font-size: 12px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="box">
+    <h1>Memoria 안전 — 개인정보처리방침</h1>
+    <div class="updated">최종 갱신: 2026-10-05</div>
+
+    <p>Memoria 안전(이하 "앱")은 사용자가 직접 발동한 SOS와, 사용자가 켠 패턴 감지 시
+    사용자가 지정한 보호자에게 위치·알림·증거를 전송하는 개인 안전 앱입니다.
+    응급기관에 자동으로 신고하지 않으며, 응급 서비스를 대체하지 않습니다.</p>
+
+    <h2>1. 수집·전송하는 정보</h2>
+    <table>
+      <tr><th>구분</th><th>내용</th><th>목적</th></tr>
+      <tr><td>위치(좌표)</td><td>SOS·분실 모드 중 위치, 최근 경로(KML)</td><td>보호자에게 위치 안내</td></tr>
+      <tr><td>음성</td><td>감지 시점 전후 약 10초</td><td>사고 증거</td></tr>
+      <tr><td>화면 캡처</td><td>사용자가 허용한 경우에 한함</td><td>사고 증거</td></tr>
+      <tr><td>기기 식별자</td><td>앱 내부에서 생성한 ID</td><td>기기 구분</td></tr>
+    </table>
+    <p>이 정보는 <strong>사용자가 지정한 Telegram 봇·챗</strong>으로만 전송됩니다.
+    이메일 전송은 현재 보류(비활성) 상태입니다.</p>
+
+    <h2>2. 수신자 및 국외 이전</h2>
+    <ul>
+      <li>수신자는 사용자가 설정 화면에서 직접 입력한 Telegram 봇·챗 ID로 한정됩니다.</li>
+      <li>Telegram은 해외에 서버를 두므로 위치·증거가 <strong>해외에서 처리</strong>될 수 있습니다.</li>
+      <li>광고·판매·프로파일링 목적의 공유는 하지 않습니다.</li>
+    </ul>
+
+    <h2>3. 동의와 통제</h2>
+    <ul>
+      <li>최초 실행 시 <strong>동의 화면</strong>을 거쳐야 사용할 수 있습니다.</li>
+      <li>감지·녹음·위치 공유가 실행 중이면 Android 포그라운드 알림으로 <strong>항상 표시</strong>됩니다.</li>
+      <li>설정에서 언제든 감지·공유를 끌 수 있습니다.</li>
+      <li>보호자는 Telegram 봇에 <code>/lost</code>(분실 모드 켜기), <code>/stop</code>(중지)을 보내 원격으로 제어할 수 있습니다. 이 명령은 기기가 Telegram에서 직접 조회합니다.</li>
+    </ul>
+
+    <h2>4. 보존·삭제</h2>
+    <ul>
+      <li>기기에 저장된 증거 파일(음성·경로·화면 캡처)은 생성 후 <strong>7일이 지나면 앱 시작 시 자동 삭제</strong>됩니다.</li>
+      <li>전송에 성공한 임시 사본은 삭제됩니다.</li>
+      <li>사용자는 앱 데이터 삭제 또는 앱 제거로 로컬 데이터를 지울 수 있습니다.</li>
+      <li>삭제 요청은 아래 연락처로 할 수 있습니다.</li>
+    </ul>
+
+    <h2>5. 보안</h2>
+    <p>전송 구간은 HTTPS/TLS(Telegram Bot API)를 사용합니다. 증거 파일은 앱 전용 저장소에
+    저장되며 자체 암호화는 하지 않습니다. 봇 토큰 등 자격증명은 Android Keystore로 암호화합니다.</p>
+
+    <h2>6. 아동</h2>
+    <p>이 앱은 만 13세 이상을 대상으로 하며, 아동으로부터 고의로 정보를 수집하지 않습니다.</p>
+
+    <h2>7. 문의</h2>
+    <ul>
+      <li>이메일: <a href="mailto:cloudseha@gmail.com">cloudseha@gmail.com</a></li>
+      <li>Telegram 관리봇: @Memoriasafe_bot</li>
+    </ul>
+
+    <h2>8. 고지</h2>
+    <p>본 방침은 변경될 수 있으며, 변경 시 본 문서에 갱신일과 함께 게시합니다.
+    응급 상황에서는 현지 긴급 서비스에 직접 연락하세요.</p>
+
+    <footer>Memoria 안전 · 개인정보처리방침</footer>
+  </div>
+</main>
+</body>
+</html>

@@ -151,6 +151,14 @@ object UserPrefs {
         prefs(context).edit().putBoolean(KEY_LOST_MODE, active).apply()
     }
 
+    /** Telegram getUpdates 오프셋 (보호자 명령 폴링용). */
+    fun getTelegramUpdateOffset(context: Context): Long =
+        prefs(context).getLong("tg_update_offset", 0L)
+
+    fun setTelegramUpdateOffset(context: Context, offset: Long) {
+        prefs(context).edit().putLong("tg_update_offset", offset).apply()
+    }
+
     fun isSharingActive(context: Context): Boolean =
         prefs(context).getBoolean(KEY_SHARING_ACTIVE, false)
 
